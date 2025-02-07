@@ -1,0 +1,16 @@
+1)random print 1 to 5 number recursion
+
+import java.util.*;
+public class Main{
+    public static void printn(int n){
+        if(n==0){
+            return;
+        }
+        printn(n-1);
+        System.out.println(n+" ");
+
+    }
+    public static void main(String[] args){
+        printn(5);
+    }
+}
