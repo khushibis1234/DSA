@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main{
+    public static void printn( int num,int n) {
+        if (num == 0) {
+            return;
+        }
+        printn(num-1,n);
+        System.out.println(num*n+" ");
+        }
+
+        public static void main(String[] args){
+        Main.printn(10,2);
+        }
+
+    }
