@@ -1,0 +1,83 @@
+sum of the di it through recursion 
+public class Main{
+    public static int sum(int n){
+        if(n>0 && n<=9){
+            return n;
+        }
+        int small=sum(n/10);
+        int add=small+n%10;
+        return add;
+    }
+    public static void main(String[] args){
+        int n=674;
+        System.out.println(sum(n));
+    }
+}
+------------------------------------------------------
+reverse number 
+public class Main {
+    public static void reversePrint(int n) {
+        if (n == 0) {
+            return;
+        }
+        System.out.print(n % 10);  
+        reversePrint(n / 10);      
+    }
+
+    public static void main(String[] args) {
+        int n = 674;
+        reversePrint(n);
+    }
+}
+
+------------------------------------------------------
+palindrome number 
+public class Main {
+    // Function to reverse the number
+    public static int reverse(int n, int rev) {
+        if (n == 0) {
+            return rev;
+        }
+        return reverse(n / 10, rev * 10 + n % 10);
+    }
+    public static boolean isPalindrome(int n) {
+        return n == reverse(n, 0);
+    }
+
+    public static void main(String[] args) {
+        int n = 121; 
+        if (isPalindrome(n)) {
+            System.out.println(n + " is a Palindrome Number.");
+        } else {
+            System.out.println(n + " is NOT a Palindrome Number.");
+        }
+    }
+}
+
+
+-------------------------------------------------
+Armstrong number 
+----------------------------------------------
+neon number 
+-----------------------------------------------
+sum of alternate sign :
+1-2+3-4+5-6+.......
+
+start:1 
+end:5
+public class Main {
+    // Recursive function to calculate sum with alternate signs
+    public static int alternateSum(int start, int end) {
+        if (start > end) {
+            return 0;
+        }
+        return (start % 2 == 0 ? -start : start) + alternateSum(start + 1, end);
+    }
+
+    public static void main(String[] args) {
+        int start = 1, end = 5;
+        System.out.println("Sum of series from " + start + " to " + end + " is: " + alternateSum(start, end));
+    }
+}
+
+-----------------------------------------------
