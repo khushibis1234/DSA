@@ -1,0 +1,26 @@
+public class Main{
+    static class Node{
+        int value;
+        Node next;
+        Node(int value){
+            this.value=value;
+        }
+    }
+    public static void main(String[] args){
+        Node a=new Node(12);
+        Node b=new Node(56);
+        Node c=new Node(45);
+        Node d=new Node(46);
+        Node e=new Node(69);
+        a.next=b;
+        b.next=c;
+        c.next=d;
+        d.next=e;
+        e.next=null;
+        System.out.println(a.value);
+        System.out.println(a.next.value);
+        System.out.println(a.next.next.value);
+        System.out.println(a.next.next.next.value);
+        System.out.println(a.next.next.next.next.value);
+    }
+}
