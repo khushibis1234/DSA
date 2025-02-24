@@ -1,0 +1,121 @@
+1)
+Factorial of a Number
+
+Write a recursive function to calculate the factorial of a given number n.
+Example: factorial(5) → 120
+public class Main {
+    public static int factorial(int n) {
+
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+               return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+        System.out.println(factorial(n)); // Output: 120
+    }
+}
+
+
+2)
+Sum of Digits
+
+Write a recursive function to find the sum of digits of a given number n.
+Example: sumOfDigits(1234) → 10 (1+2+3+4)
+
+import java.util.*;
+public class Main {
+    public static int sum(int n) {
+        if (n >= 0 && n <= 9) {
+            return n;
+        }
+        int small=sum(n/10);
+        int add=small+n%10;
+        return add;
+    }
+        public static void main (String[] args){
+         int n=1234;
+            System.out.println(sum(n));
+        }
+    }
+
+
+3)
+Fibonacci Series (nth term)
+
+Implement a recursive function to find the nth Fibonacci number.
+Example: fibonacci(5) → 5 (0,1,1,2,3,5...)
+
+4)
+Reverse a String using Recursion
+
+Write a recursive function to reverse a string.
+Example: reverse("hello") → "olleh"
+public class Main {
+    public static void reversePrint(char a[], int index) {
+        if (index < 0) {
+            return;
+        }
+        System.out.print(a[index]);
+        reversePrint(a, index - 1);     }
+
+    public static void main(String[] args) {
+        String s = "hello";
+        char a[] = s.toCharArray();
+        reversePrint(a, a.length - 1);     }
+}
+
+
+5)
+Check if a Number is Palindrome
+
+Write a recursive function to check if a number is a palindrome.
+Example: isPalindrome(121) → true, isPalindrome(123) → false
+public class Main{
+    public static int reverse(int n, int rev) {
+        if (n == 0) {
+            return rev;
+        }
+        return reverse(n / 10, rev * 10 + n % 10);
+    }
+    public static boolean isPallindrome(int n){
+        return n==reverse(n,0);
+    }
+
+
+    public static void main(String[] args){
+       int n=121;
+       if(isPallindrome(n)){
+           System.out.println(n + "is a pallindrome number");
+       }
+       else{
+           System.out.println(n + " is not a pallindrome");
+       }
+    }
+}
+
+
+
+
+6)
+Sum of Array Elements
+
+Write a recursive function to find the sum of all elements in an array.
+Example: sumArray({1, 2, 3, 4, 5}, n) → 15
+public class Main{
+    public static int sumArray(int[] arr, int n){
+        if(n==0){
+            return 0;
+        }
+  return sumArray(arr,n-1)+arr[n-1];
+    }
+    public static void main(String[] args){
+        int[] arr={1,2,3,4,5};
+        int n=arr.length;
+        System.out.println(sumArray(arr,n));
+    }
+}
+
+
